@@ -1,4 +1,4 @@
-runtime! syntax/rspec.vim
+runtime! syntax/ruby.vim
 
 unlet! b:current_syntax
 
@@ -181,6 +181,11 @@ syntax keyword chefspecMatchers
       \ do_nothing
 
 syntax match chefspecMatchers /\<\(install\|upgrade\|remove\|purge\)_\w\+\>/
+syntax match chefspecMatchers /\<\(create\|sync\|write\|run\)_\w\+\>/
+
+syntax keyword chefspecGroupMethods
+      \ cached
+      \ converge
 
 highlight link rspecGroupMethods Statement
 highlight link rspecBeforeAndAfter Identifier
@@ -190,5 +195,6 @@ highlight link rspecKeywords Constant
 highlight link rspecMatchers Function
 highlight link rspecMessageExpectation Function
 highlight link chefspecMatchers Function
+highlight link chefspecGroupMethods Statement
 
 let b:current_syntax = 'rspec'
